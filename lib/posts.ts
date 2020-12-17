@@ -1,24 +1,28 @@
-import {readdirSync} from "fs"
+import fs, {readdirSync} from 'fs'
+import matter, {GrayMatterFile} from "gray-matter"
 import {join} from "path"
-// import matter from 'gray-matter'
 
-interface DirStructure {
-  [key: string]: string[]
-}
-
-const postsDirectory = join(process.cwd(), '_posts2')
-// const content = (path: string) => matter(readFileSync(path, 'utf8'))
+const postsDirectory = join(process.cwd(), '_posts')
 const fullPath = (...dirs: string[]) => dirs.join('/')
-// const toContent = (category: string, filename: string) =>
-//   content(fullPath(postsDirectory, category, filename))
 
-const getAllPosts = (): DirStructure => (
-  readdirSync(postsDirectory).reduce((acc, curr) => ({
-    ...acc,
-    [curr]: readdirSync(fullPath(postsDirectory, curr))
-  }), {})
-)
+const postsPathes = () =>
+  readdirSync(postsDirectory).map((filename) =>
+    fullPath(postsDirectory, filename))
+
+const getAllPosts = () => postsPathes().map(postPath =>
+  matter(fs.readFileSync(postPath, 'utf8')))
+
+const postsByCategory = (category: string) =>
+  getAllPosts().filter(({ data }) =>
+    data.category == category)
+
+const sortPosts = (posts: GrayMatterFile<string>[]) =>
+  posts.sort((a, b) => (a.data.date < b.data.date ? 1 : -1))
+
 
 export {
+  sortPosts,
+  postsPathes,
   getAllPosts,
+  postsByCategory,
 }
