@@ -27,11 +27,11 @@ const PostPreview = ({
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
       <div className="ml-3 col-span-4">
-        <h3 className="mb-3 text-3xl leading-snug">
+        <div className="mb-3 text-3xl leading-snug">
           <Link as={`/posts/${category}/${slug}`} href="/posts/[category]/[slug]">
             <a className="hover:underline">{title}</a>
           </Link>
-        </h3>
+        </div>
         <div className="mb-4 text-lg">
           <DateFormatter dateString={date} />
         </div>
