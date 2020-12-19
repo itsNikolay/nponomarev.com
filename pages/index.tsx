@@ -2,18 +2,18 @@ import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import Intro from '../components/intro'
 import Layout from '../components/layout'
-import { getAllPosts } from '../lib/api'
 import Head from 'next/head'
-import { CMS_NAME } from '../lib/constants'
+import {CMS_NAME} from '../lib/constants'
 import Post from '../types/post'
 import Categories from '../components/Categories'
+import {getAllPosts} from '../lib/posts'
 
 type Props = {
-  allPosts: Post[]
+  posts: Post[]
 }
 
-const Index = ({ allPosts }: Props) => {
-  const morePosts = allPosts.slice(1)
+const Index = ({posts}: Props) => {
+  const morePosts = posts
   return (
     <>
       <Layout>
@@ -21,7 +21,7 @@ const Index = ({ allPosts }: Props) => {
           <title>Next.js Blog Example with {CMS_NAME}</title>
         </Head>
         <Container>
-          <Categories/>
+          <Categories />
           <Intro />
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
@@ -33,16 +33,9 @@ const Index = ({ allPosts }: Props) => {
 export default Index
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
-    'title',
-    'date',
-    'slug',
-    'author',
-    'coverImage',
-    'excerpt',
-  ])
+  const posts = getAllPosts().map(p => p.data)
 
   return {
-    props: { allPosts },
+    props: {posts},
   }
 }

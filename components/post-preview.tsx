@@ -10,6 +10,7 @@ type Props = {
   excerpt: string
   author: Author
   slug: string
+  category: string
 }
 
 const PostPreview = ({
@@ -18,6 +19,7 @@ const PostPreview = ({
   date,
   excerpt,
   slug,
+  category
 }: Props) => {
   return (
     <div className="grid grid-cols-5">
@@ -26,7 +28,7 @@ const PostPreview = ({
       </div>
       <div className="ml-3 col-span-4">
         <h3 className="mb-3 text-3xl leading-snug">
-          <Link as={`/posts/${slug}`} href="/posts/[slug]">
+          <Link as={`/posts/${category}/${slug}`} href="/posts/[category]/[slug]">
             <a className="hover:underline">{title}</a>
           </Link>
         </h3>
