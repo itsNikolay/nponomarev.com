@@ -3,6 +3,7 @@ import matter, {GrayMatterFile} from "gray-matter"
 import {join} from "path"
 
 const postsDirectory = join(process.cwd(), '_posts')
+
 const fullPath = (...dirs: string[]) => dirs.join('/')
 
 const postsPathes = () =>
@@ -22,7 +23,6 @@ const sortPosts = (posts: GrayMatterFile<string>[]) =>
 const findPostBySlug = (category: string, slug: string) => {
   return postsByCategory(category).find(p => p.data.slug === slug)
 }
-
 
 export {
   sortPosts,

@@ -5,3 +5,6 @@ server:
 
 watch:
 	yarn test-watch
+
+lint:
+	yarn run eslint --fix ./
