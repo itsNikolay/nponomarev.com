@@ -1,4 +1,4 @@
-import fs, {readdirSync} from 'fs'
+import {readdirSync} from 'fs'
 import matter, {GrayMatterFile} from "gray-matter"
 import {join} from "path"
 
@@ -10,8 +10,7 @@ const postsPathes = () =>
   readdirSync(postsDirectory).map((filename) =>
     fullPath(postsDirectory, filename))
 
-const getAllPosts = () => postsPathes().map(postPath =>
-  matter(fs.readFileSync(postPath, 'utf8')))
+const getAllPosts = () => postsPathes().map(postPath => matter.read(postPath))
 
 const postsByCategory = (category: string) =>
   getAllPosts().filter(({ data }) =>

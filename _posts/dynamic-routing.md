@@ -43,3 +43,11 @@ consequat id porta nibh. Adipiscing elit duis tristique sollicitudin
 nibh sit amet commodo nulla. Diam vulputate ut pharetra sit amet. Ut
 tellus elementum sagittis vitae et leo. Arcu non odio euismod lacinia
 at quis risus sed vulputate.
+
+```ruby
+def hello
+  puts 'hello'
+end
+```
+
+![Cat](/assets/blog/authors/jj.jpeg)
