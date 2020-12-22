@@ -1,5 +1,5 @@
 module.exports = {// eslint-disable-line no-undef
-  purge: ['./components/**/*.tsx', './pages/**/*.tsx'],
+  purge: ['./components/**/*.tsx', './pages/**/*.tsx', './_posts/**/*.md'],
   theme: {
     extend: {
       colors: {
