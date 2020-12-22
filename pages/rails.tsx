@@ -4,7 +4,7 @@ import Categories from '../components/Categories'
 import Header from '../components/header'
 import Post from '../types/post'
 import MoreStories from '../components/more-stories'
-import {postsByCategory} from '../lib/posts'
+import {postsByCategory, sortPosts} from '../lib/posts'
 
 type Props = {
   posts: Post[]
@@ -24,7 +24,7 @@ const Rails = ({ posts }: Props) => {
 }
 
 export const getStaticProps = async () => {
-  const posts = postsByCategory('rails').map(p => p.data)
+  const posts = sortPosts(postsByCategory('rails')).map(p => p.data)
 
   return {
     props: { posts },

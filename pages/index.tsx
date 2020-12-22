@@ -6,7 +6,7 @@ import Head from 'next/head'
 import {CMS_NAME} from '../lib/constants'
 import Post from '../types/post'
 import Categories from '../components/Categories'
-import {getAllPosts} from '../lib/posts'
+import {getAllPosts, sortPosts} from '../lib/posts'
 
 type Props = {
   posts: Post[]
@@ -33,7 +33,7 @@ const Index = ({posts}: Props) => {
 export default Index
 
 export const getStaticProps = async () => {
-  const posts = getAllPosts().map(p => p.data)
+  const posts = sortPosts(getAllPosts()).map(p => p.data)
 
   return {
     props: {posts},
