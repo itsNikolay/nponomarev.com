@@ -13,7 +13,6 @@ type Props = {
 }
 
 const Index = ({posts}: Props) => {
-  const morePosts = posts
   return (
     <>
       <Layout>
@@ -23,7 +22,7 @@ const Index = ({posts}: Props) => {
         <Container>
           <Categories />
           <Intro />
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+          {posts.length > 0 && <MoreStories posts={posts} />}
         </Container>
       </Layout>
     </>
