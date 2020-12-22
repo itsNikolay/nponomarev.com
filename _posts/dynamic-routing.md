@@ -50,4 +50,15 @@ def hello
 end
 ```
 
-![Cat](/assets/blog/authors/jj.jpeg)
+<div class="max-w-md mx-auto overflow-hidden bg-white shadow-md rounded-xl md:max-w-2xl">
+  <div class="md:flex">
+    <div class="md:flex-shrink-0">
+      <img class="object-cover w-full h-56 md:w-48" src="/assets/blog/authors/jj.jpeg" alt="Man looking at item at a store">
+    </div>
+    <div class="p-8">
+      <div class="text-sm font-semibold tracking-wide text-indigo-500 uppercase">Case study</div>
+      <a href="#" class="block mt-1 text-lg font-medium leading-tight text-black hover:underline">Finding customers for your new business</a>
+      <p class="mt-2 text-gray-500">Getting a new business off the ground is a lot of hard work. Here are five ideas you can use to find your first customers.</p>
+    </div>
+  </div>
+</div>
