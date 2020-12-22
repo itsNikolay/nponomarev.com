@@ -4,11 +4,11 @@ it('#categoriesList', () => {
   expect(categoriesList).toEqual([
     {
       name: 'Rails',
-      path: '/rails'
+      path: '/posts/rails'
     },
     {
       name: 'JavaScript',
-      path: '/javascript',
+      path: '/posts/javascript',
     }
   ])
 })
