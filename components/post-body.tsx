@@ -1,11 +1,13 @@
 import markdownStyles from './markdown-styles.module.css'
 import 'highlight.js/styles/default.css';
-import hljs from 'highlight.js';
+import hljs from 'highlight.js/lib/core';
 import javascript from 'highlight.js/lib/languages/javascript';
 import ruby from 'highlight.js/lib/languages/ruby';
+import erb from 'highlight.js/lib/languages/erb';
 import {useEffect} from 'react';
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('ruby', ruby);
+hljs.registerLanguage('erb', erb);
 
 type Props = {
   content: string
