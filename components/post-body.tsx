@@ -8,6 +8,7 @@ import {useEffect} from 'react';
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('ruby', ruby);
 hljs.registerLanguage('erb', erb);
+import 'highlight.js/styles/railscasts.css';
 
 type Props = {
   content: string
