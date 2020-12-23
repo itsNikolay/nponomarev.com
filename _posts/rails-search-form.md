@@ -1,5 +1,5 @@
 ---
-title: 'Adding a Search Form to filter records'
+title: 'Adding a Rails Search Form to filter posts'
 excerpt: 'Rails Search Form'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-12-22T20:17:58.562Z'
@@ -11,6 +11,16 @@ ogImage:
 category: 'rails'
 slug: 'rails-search-form'
 ---
+
+As project start growing, amount of records grow all together.
+So to find needed record is becoming quite hard.
+And here comes search form to help us.
+
+The idea of search form is pretty simple: to provide an user fields to
+type data and then filter records with SQL.
+
+Lets say we have a blog with posts. And we need to find all posts for
+the last month:
 
 1. ./app/views/posts/index.html.erb
 
