@@ -1,5 +1,5 @@
 ---
-title: 'Adding a Rails Search Form to filter posts'
+title: 'Rails Adding a Search Form to filter posts'
 excerpt: 'Rails Search Form'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-12-22T20:17:58.562Z'
