@@ -2,6 +2,7 @@ import {GrayMatterFile} from 'gray-matter'
 import { getAllPosts, postsPathes, postsByCategory, sortPosts, findPostBySlug } from './posts'
 
 it('#postsPathes', () => {
+  console.log('path', process.env.POSTS_PATH)
   expect(postsPathes()[0]).toMatch(/.md/)
 })
 
