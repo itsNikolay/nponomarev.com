@@ -22,13 +22,11 @@ const PostBody = ({ content }: Props) => {
   }, []);
 
   return (
-    <article>
-      <div
-        className={markdownStyles['markdown']}
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </article>
-  )
+    <div
+      className={markdownStyles['markdown']}
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+    )
 }
 
 export default PostBody
