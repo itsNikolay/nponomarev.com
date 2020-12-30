@@ -9,8 +9,10 @@
   @apply my-6;
 }
 
-.markdown p code {
-  @apply text-base bg-gray-300;
+.markdown p code,
+.markdown ul code,
+.markdown li code {
+  @apply font-mono bg-gray-300;
 }
 
 .markdown h2 {
