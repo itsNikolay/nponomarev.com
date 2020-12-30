@@ -8,7 +8,7 @@ author:
   picture: '/assets/blog/authors/jj.jpeg'
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
-category: 'javascript'
+category: 'nextjs'
 slug: 'deploy-nextjs-app-to-free-digital-ocean-apps'
 ---
 

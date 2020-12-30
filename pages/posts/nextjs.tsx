@@ -9,12 +9,12 @@ type Props = {
   posts: Post[]
 }
 
-const Javascript = ({ posts }: Props) => {
+const NextJS = ({ posts }: Props) => {
   return (
     <Layout>
       <Container>
         <Categories />
-        <div>Javascript</div>
+        <div>NextJS</div>
         {posts.length > 0 && <MoreStories posts={posts} />}
       </Container>
     </Layout>
@@ -22,11 +22,11 @@ const Javascript = ({ posts }: Props) => {
 }
 
 export const getStaticProps = async () => {
-  const posts = sortPosts(postsByCategory('javascript')).map(p => p.data)
+  const posts = sortPosts(postsByCategory('nextjs')).map(p => p.data)
 
   return {
     props: { posts },
   }
 }
 
-export default Javascript
+export default NextJS

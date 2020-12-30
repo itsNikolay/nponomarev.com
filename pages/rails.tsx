@@ -1,10 +1,9 @@
-import Layout from '../../components/layout'
-import Container from '../../components/container'
-import Categories from '../../components/Categories'
-import Header from '../../components/header'
-import Post from '../../types/post'
-import MoreStories from '../../components/more-stories'
-import {postsByCategory, sortPosts} from '../../lib/posts'
+import Layout from '../components/layout'
+import Container from '../components/container'
+import Categories from '../components/Categories'
+import Post from '../types/post'
+import MoreStories from '../components/more-stories'
+import {postsByCategory, sortPosts} from '../lib/posts'
 
 type Props = {
   posts: Post[]
