@@ -1,6 +1,6 @@
 ---
-title: 'Rails Adding a Search Form to filter posts'
-excerpt: 'Rails Search Form'
+title: 'Rails Adding Filter Records Form'
+Excerpt: 'Rails Filter Records Form'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-12-22T20:17:58.562Z'
 author:
@@ -9,7 +9,7 @@ author:
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 category: 'rails'
-slug: 'rails-search-form'
+slug: 'rails-filter-form'
 ---
 
 As project start growing, amount of records grow all together.
@@ -22,86 +22,28 @@ type data and then filter records with SQL.
 Lets say we have a blog with posts. And we need to find all posts for
 the last month:
 
-1. ./app/views/posts/index.html.erb
+1. ./app/views/users/index.html.erb
 
 ```erb
 <%= form_for '', method: :get do %>
-  <p>
-    <%= label_tag 'dateFrom', 'From' %>
-    <%= date_field_tag 'from', params[:from], id: 'dateFrom' %>
-  </p>
-
-  <p>
-    <%= label_tag 'dateTo', 'To' %>
-    <%= date_field_tag 'to', params[:to], id: 'dateTo' %>
-  </p>
+  <%= label_tag 'name', 'First Name' %>
+  <%= input_tag 'name', params[:name], id: 'name' %>
 
   <%= submit_tag "Filter", class: 'btn btn-primary' %>
 <% end %>
-
-<table class="table">
-  <thead>
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Created At</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @posts.each do |posts| %>
-      <tr>
-        <td><%= posts.id %></td>
-        <td><%= posts.name %></td>
-        <td><%= posts.created_at %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 ```
 
-1. ./app/controllers/posts_controller.rb
+2. ./app/controllers/users_controller.rb
 
 ```ruby
-class PostsController < ApplicationController
+class UsersController < ApplicationController
   def index
-    @post = Posts::Filter.new(params).call
+    @users = User.all
+    @users = User.where(name: params[:name]) if params[:name].present?
+    @users
   end
 end
 ```
 
-1. ./app/services/posts/filter.rb
-
-```ruby
-module Posts
-  class Filter
-    attr_reader :params, :scope
-
-    def initialize(params)
-      @params = params
-    end
-
-    def call
-      @scope = FormApplication.all.includes(:company)
-
-      filter_by_from
-      filter_by_to
-
-      scope
-    end
-
-    private
-
-    def filter_by_from
-      return if params[:from].blank?
-
-      @scope = scope.where(Post.arel_table[:created_at].gt(params[:from]))
-    end
-
-    def filter_by_to
-      return if params[:to].blank?
-
-      @scope = scope.where(Post.arel_table[:created_at].lteq(params[:from]))
-    end
-  end
-end
-```
+Submit click will send data to `users#index` endpoint which will
+render selected records matched that `params[:name]` value

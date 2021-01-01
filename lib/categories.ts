@@ -15,6 +15,10 @@ const categoriesList = [
     name: 'NextJS',
     path: '/posts/nextjs',
   },
+  {
+    name: 'Vim',
+    path: '/posts/vim',
+  },
 ]
 
 export { categoriesList }
