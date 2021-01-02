@@ -38,3 +38,7 @@
 .markdown a {
   @apply text-blue-700 underline;
 }
+
+.markdown blockquote  p {
+  @apply p-3 bg-gray-100 border-l-8;
+}
