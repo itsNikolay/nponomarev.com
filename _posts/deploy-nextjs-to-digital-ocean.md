@@ -3,6 +3,7 @@ title: 'Deploy Nexjs Static Site to Free Digital Ocean Apps'
 excerpt: 'Deploy Nexjs static App to free Digital Ocean App instance'
 coverImage: '/assets/blog/dynamic-routing/cover.jpg'
 date: '2020-12-29T20:17:58.562Z'
+updated: '2021-01-05T20:17:58.562Z'
 author:
   name: Nikolay Ponomarev
   picture: '/assets/blog/authors/jj.jpeg'
@@ -75,5 +76,19 @@ chmod +x ./rename.sh
 
 4. Commit, push, and redeploy
 5. Visit any page. Refresh page. And it works!
+
+## Adding Godaddy Domain To DigitalOcean Static App
+
+Visit in Digital Ocean Apps
+
+Digitalocean Apps -> YOUR APP -> Settings -> Domains -> Edit -> Add Domain -> YOUR_DOMAIN.com -> We manage your domain -> Save
+
+Go Daddy -> YOUR DOMAIN -> DNS -> Server names -> Change -> Set my own DNS servers ->
+
+- ns1.digitalocean.com
+- ns2.digitalocean.com
+- ns3.digitalocean.com
+
+Save -> Wait some time (till 24 hours) to domain records will be renewed
 
 That's all! I hope it helped to you :)
