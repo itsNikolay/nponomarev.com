@@ -18,7 +18,7 @@ const Index = ({posts}: Props) => {
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Nponomrev Blog about Web Development</title>
         </Head>
         <Container>
           <Categories />
