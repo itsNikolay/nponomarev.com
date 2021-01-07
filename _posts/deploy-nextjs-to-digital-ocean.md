@@ -50,12 +50,11 @@ Here's the script
 ```sh
 #!/bin/sh
 
-for file in $(find ./out -name "*.html" ! -name "index.html" !); do
+for file in $(find ./out/ -name "*.html" ! -name "index.html"); do
+  echo $file
   newname=`echo $file | sed 's/\.html$//g'`
 
-  touch "$newname"
-  cat "$file" > ${newname}
-  rm -f "$file"
+  mv -v $file $newname
 done
 ```
 
