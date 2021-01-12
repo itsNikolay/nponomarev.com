@@ -24,7 +24,7 @@
 }
 
 .markdown code {
-  @apply font-mono text-xs;
+  @apply p-5 font-mono text-xs;
 }
 
 .markdown ul {
