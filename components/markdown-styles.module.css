@@ -24,11 +24,19 @@
 }
 
 .markdown code {
-  @apply p-5 font-mono text-xs;
+  @apply font-mono text-xs;
+}
+
+.markdown pre code {
+  @apply p-5;
 }
 
 .markdown ul {
   @apply list-disc list-inside;
+}
+
+.markdown ul ol {
+  @apply mt-0 ml-6;
 }
 
 .markdown ol {

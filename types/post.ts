@@ -12,6 +12,7 @@ type PostType = {
   }
   content: string
   category: string
+  updatedAt: string | undefined
 }
 
 export default PostType

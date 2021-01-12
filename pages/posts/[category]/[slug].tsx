@@ -46,6 +46,7 @@ const Post = ({ post, preview }: Props) => {
               coverImage={post.coverImage}
               date={post.date}
               author={post.author}
+              updatedAt={post.updatedAt}
             />
             <PostBody content={post.content} />
           </article>

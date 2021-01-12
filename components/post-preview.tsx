@@ -11,6 +11,7 @@ type Props = {
   author: Author
   slug: string
   category: string
+  updatedAt: string | undefined
 }
 
 const PostPreview = ({
@@ -19,7 +20,7 @@ const PostPreview = ({
   date,
   excerpt,
   slug,
-  category
+  category,
 }: Props) => {
   return (
     <div className="grid grid-cols-5">

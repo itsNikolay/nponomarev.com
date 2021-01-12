@@ -8,17 +8,27 @@ type Props = {
   coverImage: string
   date: string
   author: Author
+  updatedAt: string | undefined
 }
 
-const PostHeader = ({ title, coverImage, date }: Props) => {
+const PostHeader = ({ title, coverImage, date, updatedAt }: Props) => {
   return (
     <>
       <PostTitle>{title}</PostTitle>
       <div className="mb-8 sm:mx-0">
         <CoverImage title={title} src={coverImage} />
       </div>
-      <div className="flex justify-end mb-6 text-lg">
-        <DateFormatter dateString={date} />
+      <div className="mb-6 text-right">
+        <ul>
+          <li>
+            <span>
+              Created at: <DateFormatter dateString={date} />
+            </span>
+          </li> 
+          { updatedAt && <li><span>
+              Updated at: <DateFormatter dateString={updatedAt} />
+        </span></li> }
+        </ul>
       </div>
     </>
   )
