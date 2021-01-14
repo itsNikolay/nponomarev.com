@@ -9,7 +9,7 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <GoogleAnalytics />
+          { process.env.NODE_ENV === 'production' && <GoogleAnalytics /> }
         </body>
       </Html>
     )
