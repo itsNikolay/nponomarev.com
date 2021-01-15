@@ -1,6 +1,8 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import React, {Suspense} from 'react';
-const GoogleAnalytics = React.lazy(() => import('../components/GoogleAnalytics'));
+import React from 'react';
+import dynamic from 'next/dynamic'
+
+const GoogleAnalytics = dynamic(() => import('../components/GoogleAnalytics'));
 
 export default class MyDocument extends Document {
   render() {
@@ -10,13 +12,9 @@ export default class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          { process.env.NODE_ENV === 'production' &&
-          <Suspense fallback={<></>}>
-            <GoogleAnalytics />
-          </Suspense>
-          }
-        </body>
-      </Html>
-    )
+          { process.env.NODE_ENV === 'production' && <GoogleAnalytics /> }
+      </body>
+    </Html>
+  )
   }
 }
