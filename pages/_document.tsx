@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import process from 'process';
 import React, {Suspense} from 'react';
 const GoogleAnalytics = React.lazy(() => import('../components/GoogleAnalytics'));
 
