@@ -11,10 +11,8 @@ const Container = ({ children }: Props) => {
     <div className="container justify-center px-5 m-auto mx-lg">
       <Categories />
       <Intro />
-      <div className="grid grid-cols-5">
-        <div>
-          hello
-        </div>
+      <div className="grid grid-cols-5 gap-6">
+        <div />
         <div className="col-span-3">
           {children}
         </div>
