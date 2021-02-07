@@ -1,4 +1,3 @@
-import Container from './container'
 import Link from 'next/link'
 
 const Footer = () => {

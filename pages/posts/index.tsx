@@ -1,11 +1,8 @@
 import Container from '../../components/container'
 import MoreStories from '../../components/more-stories'
-import Intro from '../../components/intro'
 import Layout from '../../components/layout'
 import Head from 'next/head'
-import {CMS_NAME} from '../../lib/constants'
 import Post from '../../types/post'
-import Categories from '../../components/Categories'
 import {getAllPosts, sortPosts} from '../../lib/posts'
 
 type Props = {
@@ -17,11 +14,9 @@ const Index = ({posts}: Props) => {
     <>
       <Layout>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Nponomrev Blog about Web Development</title>
         </Head>
         <Container>
-          <Categories />
-          <Intro />
           {posts.length > 0 && <MoreStories posts={posts} />}
         </Container>
       </Layout>

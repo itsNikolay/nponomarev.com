@@ -1,10 +1,8 @@
 import Container from '../components/container'
 import MoreStories from '../components/more-stories'
-import Intro from '../components/intro'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import Post from '../types/post'
-import Categories from '../components/Categories'
 import {getAllPosts, sortPosts} from '../lib/posts'
 
 type Props = {
@@ -20,8 +18,6 @@ const Index = ({posts}: Props) => {
           <title>Nponomrev Blog about Web Development</title>
         </Head>
         <Container>
-          <Categories />
-          <Intro />
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
       </Layout>

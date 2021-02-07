@@ -1,9 +1,7 @@
-import React, { ReactElement, FC } from 'react'
+import React from 'react'
 import {GA_TRACKING_ID} from '../lib/gtag'
 
-interface Props {}
-
-const GoogleAnalytics: FC<Props> = ({ }: Props): ReactElement => {
+const GoogleAnalytics = () => {
   return (
     <>
       <script

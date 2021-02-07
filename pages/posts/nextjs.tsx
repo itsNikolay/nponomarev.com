@@ -1,6 +1,5 @@
 import Layout from '../../components/layout'
 import Container from '../../components/container'
-import Categories from '../../components/Categories'
 import MoreStories from '../../components/more-stories'
 import Post from '../../types/post'
 import {postsByCategory, sortPosts} from '../../lib/posts'
@@ -13,8 +12,6 @@ const NextJS = ({ posts }: Props) => {
   return (
     <Layout>
       <Container>
-        <Categories />
-        <div>NextJS</div>
         {posts.length > 0 && <MoreStories posts={posts} />}
       </Container>
     </Layout>
