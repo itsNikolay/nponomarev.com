@@ -26,7 +26,7 @@
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.10",
     "@babel/preset-typescript": "^7.12.7",
-    "@types/classnames": "^2.2.10",
+    "@types/classnames": "^2.3.1",
     "@types/gtag.js": "^0.0.4",
     "@types/highlightjs": "^10.1.0",
     "@types/jest": "^26.0.19",
