@@ -11,8 +11,12 @@ interface Actions {
   order: Order
 }
 
+interface PaypalInstance {
+  render: (some: string) => void
+}
+
 interface Paypal {
-  Buttons: unknown
+  Buttons: (something: { [key: string]: any }) => PaypalInstance
 }
 
 declare global {
