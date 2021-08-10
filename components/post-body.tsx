@@ -5,7 +5,7 @@ import javascript from 'highlight.js/lib/languages/javascript';
 import ruby from 'highlight.js/lib/languages/ruby';
 import erb from 'highlight.js/lib/languages/erb';
 import bash from 'highlight.js/lib/languages/bash';
-import {useEffect} from 'react';
+import { useEffect } from 'react';
 hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('ruby', ruby);
 hljs.registerLanguage('erb', erb);
@@ -18,7 +18,7 @@ type Props = {
 
 const PostBody = ({ content }: Props) => {
   useEffect(() => {
-    hljs.initHighlighting();
+    hljs.highlightAll();
   }, []);
 
   return (
@@ -26,7 +26,7 @@ const PostBody = ({ content }: Props) => {
       className={markdownStyles['markdown']}
       dangerouslySetInnerHTML={{ __html: content }}
     />
-    )
+  )
 }
 
 export default PostBody
