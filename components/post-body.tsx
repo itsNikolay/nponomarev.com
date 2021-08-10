@@ -10,7 +10,7 @@ hljs.registerLanguage('javascript', javascript);
 hljs.registerLanguage('ruby', ruby);
 hljs.registerLanguage('erb', erb);
 hljs.registerLanguage('bash', bash);
-import 'highlight.js/styles/railscasts.css';
+import 'highlight.js/styles/base16/railscasts.css';
 
 type Props = {
   content: string
