@@ -1,12 +1,12 @@
 ---
 title: 'MacOS: Increase fps on external screen'
 excerpt: 'A solution when FPS decreased on external screen and mouse stopped moving smother'
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
+coverImage: '/assets/blog/increase-fps-on-external-screen/1-macos-screen-pref.png'
 date: '2021-09-10T12:30:58.562Z'
 updated: '2021-09-10T12:30:58.562Z'
 author:
   name: Nikolay Ponomarev
-  picture: '/assets/blog/authors/jj.jpeg'
+  picture: '/assets/blog/increase-fps-on-external-screen/1-macos-screen-pref.png'
 ogImage:
   url: '/assets/blog/dynamic-routing/cover.jpg'
 category: 'macos'
