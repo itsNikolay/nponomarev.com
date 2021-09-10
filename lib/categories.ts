@@ -19,6 +19,10 @@ const categoriesList = [
     name: 'Vim',
     path: '/posts/vim',
   },
+  {
+    name: 'MacOS',
+    path: '/posts/macos',
+  },
 ]
 
 export { categoriesList }
